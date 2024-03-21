@@ -50,6 +50,7 @@ export const Register = () => {
               <input
                 type="text"
                 name="name"
+                required
                 id="register_name"
                 onChange={changed}
               />
@@ -59,6 +60,7 @@ export const Register = () => {
               <input
                 type="text"
                 name="surname"
+                required
                 id="register_surname"
                 onChange={changed}
               />
@@ -69,6 +71,7 @@ export const Register = () => {
             <input
               type="text"
               name="nick"
+              required
               id="register_nick"
               onChange={changed}
             />
@@ -78,6 +81,7 @@ export const Register = () => {
             <textarea
               type="text"
               name="bio"
+              required
               onChange={changed}
               className="settings__textarea"
               id="register_bio"
@@ -88,6 +92,7 @@ export const Register = () => {
             <input
               type="email"
               name="email"
+              required
               id="register_email"
               onChange={changed}
             />
@@ -97,6 +102,7 @@ export const Register = () => {
             <input
               type="password"
               name="password"
+              required
               id="register_password"
               onChange={changed}
             />
