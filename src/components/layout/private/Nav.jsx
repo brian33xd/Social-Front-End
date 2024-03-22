@@ -27,30 +27,17 @@ export const Nav = () => {
 
         <li className="menu-list__item">
           <NavLink
-            to="/social/feed"
+            to="/social/people"
             className={({ isActive }) =>
               isActive
                 ? "menu-list__link-active menu-list__link"
                 : "menu-list__link"
             }
           >
-            <i className="bx bx-list-ul nav__icon"></i>
-            <span className="menu-list__title">Timeline</span>
-          </NavLink>
-          <li className="menu-list__item">
-            <NavLink
-              to="/social/people"
-              className={({ isActive }) =>
-                isActive
-                  ? "menu-list__link-active menu-list__link"
-                  : "menu-list__link"
-              }
-            >
-              <i className="bx bx-user-plus nav__icon"></i>
+            <i className="bx bx-user-plus nav__icon"></i>
 
-              <span className="menu-list__title">Community</span>
-            </NavLink>
-          </li>
+            <span className="menu-list__title">Community</span>
+          </NavLink>
         </li>
 
         <h3 className="menu-list__subtitle">PROFILE</h3>

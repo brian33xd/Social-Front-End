@@ -25,7 +25,6 @@ export const Routing = () => {
           <Route path="social" element={<PrivateLayout />}>
             <Route index element={<Feed />} />
             <Route path="home" element={<Feed />} />
-            <Route path="feed" element={<Feed />} />
             <Route path="logout" element={<Logout />} />
             <Route path="people" element={<People />} />.
             <Route path="settings" element={<Settings />} />
