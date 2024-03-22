@@ -119,7 +119,7 @@ export const Register = () => {
 
         <h3 className="or">or</h3>
 
-        <Link to="http://localhost:5173" className="button-register">
+        <Link to="login" className="button-register">
           Login with your account
         </Link>
       </div>
