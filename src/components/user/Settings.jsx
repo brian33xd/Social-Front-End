@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { Global } from "../../helpers/Global";
 import avatar from "../../assets/img/user.png";
 import { SerializeForm } from "../../helpers/SerializeForm";
+import { toast } from "sonner";
 export const Settings = () => {
   const [saved, setSaved] = useState("Not-saved");
 
@@ -27,12 +28,12 @@ export const Settings = () => {
     });
 
     const data = await request.json();
+    console.log(data);
+    if (data.status == "success" && data.userUpdated) {
+      toast.success("Updated user");
+      delete data.userUpdated.password;
 
-    if (data.status == "success" && data.user) {
-      setSaved("Saved");
-      delete data.user.password;
-
-      setAuth(data.user);
+      setAuth(data.userUpdated);
     } else {
       setSaved(data.message);
     }
@@ -54,10 +55,14 @@ export const Settings = () => {
 
       const uploadedData = await uploadRequest.json();
 
+      console.log(uploadedData);
       if (uploadedData.status == "success" && uploadedData.user) {
+        toast.success("Image uploaded");
         delete uploadedData.user.password;
 
         setAuth(uploadedData.user);
+      } else {
+        toast.error("Image error");
       }
 
       setSaved(uploadedData.message);

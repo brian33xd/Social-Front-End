@@ -6,6 +6,7 @@ import { Global } from "../../helpers/Global";
 import { PublicationList } from "../publication/PublicationList";
 import useAuth from "../../hooks/useAuth";
 import { Sidebar } from "../layout/private/Sidebar";
+import { toast } from "sonner";
 export const Profile = () => {
   const [iFollow, setIFollow] = useState(false);
   const { auth } = useAuth();
@@ -63,6 +64,7 @@ export const Profile = () => {
 
     if (data.status == "success") {
       setIFollow(true);
+      toast.success("Now following");
     }
   };
 
@@ -78,6 +80,7 @@ export const Profile = () => {
 
     if (data.status == "success") {
       setIFollow(false);
+      toast.warning("Unfollowed an user");
     }
   };
 
