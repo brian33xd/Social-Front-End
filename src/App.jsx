@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { Routing } from "./router/Routing";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const Navigate = useNavigate();
   // Función para registrar la última actividad del usuario
   const registrarActividadUsuario = () => {
     localStorage.setItem("lastActivity", Date.now());
@@ -16,6 +18,7 @@ function App() {
       if (pastTime > limitTime) {
         // Limpiar el localStorage
         localStorage.clear();
+        Navigate("/");
       }
     }
   };
